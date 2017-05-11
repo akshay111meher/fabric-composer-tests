@@ -1,0 +1,12 @@
+{
+  "name": "property-network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deployNetwork": "composer archive create --sourceName . --sourceType dir --archiveFile digitalLandTitle.bna && composer network deploy --archiveFile digitalLandTitle.bna  -p hlfv1 -i admin -s adminpw && composer network list -n property-network -p hlfv1 -i admin -s adminpw"
+  },
+  "author": "",
+  "license": "ISC"
+}

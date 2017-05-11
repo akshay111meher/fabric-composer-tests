@@ -1,0 +1,9 @@
+{
+
+  "composer-sample-app" : {
+     "participantId" : "WebAppAdmin",
+     "participantPwd" :"DJY27pEnl16d",
+     "businessNetworkIdentifier" : "digitalproperty-network",
+     "connectionProfile" : "defaultProfile"
+  }
+}
