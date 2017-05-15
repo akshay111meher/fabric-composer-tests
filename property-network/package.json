@@ -5,8 +5,27 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deployNetwork": "composer archive create --sourceName . --sourceType dir --archiveFile digitalLandTitle.bna && composer network deploy --archiveFile digitalLandTitle.bna  -p hlfv1 -i admin -s adminpw && composer network list -n property-network -p hlfv1 -i admin -s adminpw"
+    "downloadHyperledger": "scripts/download-hyperledger.sh && scripts/createProfile.sh",
+    "startHLF": "scripts/start-hyperledger.sh",
+    "deployNetwork": "composer network deploy --archiveFile digitalLandTitle.bna --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d",
+    "createArchive": "composer archive create --sourceName . --sourceType dir --archiveFile digitalLandTitle.bna",
+    "networkList": "composer network list -n property-network -p hlfv1 -i WebAppAdmin -s DJY27pEnl16d",
+    "setup":"npm run-script downloadHyperledger && npm run-script startHLF && npm run-script createArchive && npm run-script deployNetwork"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "cli-table": "^0.3.1",
+    "composer-admin": "^0.7.0",
+    "composer-client": "^0.7.0",
+    "config": "^1.24.0",
+    "digitalproperty-network": "latest",
+    "jsonfile": "^2.4.0",
+    "lodash": "^4.17.4",
+    "sprintf-js": "^1.0.3",
+    "winston": "^2.3.0",
+    "yargs": "^6.5.0"
+
+  }
 }
