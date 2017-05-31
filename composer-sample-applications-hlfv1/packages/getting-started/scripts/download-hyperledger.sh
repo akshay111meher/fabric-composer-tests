@@ -29,6 +29,7 @@ docker pull 10.200.208.11:5000/hyperledger/fabric-ca:x86_64-1.0.0-alpha
 docker pull 10.200.208.11:5000/hyperledger/fabric-ccenv:x86_64-1.0.0-alpha
 docker pull 10.200.208.11:5000/hyperledger/fabric-orderer:x86_64-1.0.0-alpha
 docker pull 10.200.208.11:5000/hyperledger/fabric-couchdb:x86_64-1.0.0-alpha
+docker pull 10.200.208.11:5000/hyperledger/fabric-baseos:x86_64-0.3.0
 
 # renaming docker images
 docker tag 10.200.208.11:5000/hyperledger/fabric-peer:x86_64-1.0.0-alpha hyperledger/fabric-peer:x86_64-1.0.0-alpha
@@ -36,4 +37,4 @@ docker tag 10.200.208.11:5000/hyperledger/fabric-ca:x86_64-1.0.0-alpha hyperledg
 docker tag 10.200.208.11:5000/hyperledger/fabric-ccenv:x86_64-1.0.0-alpha hyperledger/fabric-ccenv:x86_64-1.0.0-alpha
 docker tag 10.200.208.11:5000/hyperledger/fabric-orderer:x86_64-1.0.0-alpha hyperledger/fabric-orderer:x86_64-1.0.0-alpha
 docker tag 10.200.208.11:5000/hyperledger/fabric-couchdb:x86_64-1.0.0-alpha hyperledger/fabric-couchdb:x86_64-1.0.0-alpha
-
+docker tag 10.200.208.11:5000/hyperledger/fabric-baseos:x86_64-0.3.0 hyperledger/fabric-baseos:x86_64-0.3.0

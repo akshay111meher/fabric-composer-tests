@@ -1,18 +1,14 @@
 {
   "name": "getting-started",
   "version": "1.0.0",
-  "description": "The repository for the Fabric Composer Getting Started application",
+  "description": "The repository for the Hyperledger Composer Getting Started application",
   "main": "index.js",
   "scripts": {
     "preinstall": "composer --version || { echo 'Please first run npm install -g composer-cli' ; exit 1;} ",
-    "test": "mocha --recursive && npm run bootstrapAssets && npm run listAssets && npm run submitTransaction",
-    "submitTransaction": "node cli.js landregistry submit && node cli.js landregistry list",
-    "listAssets": "node cli.js landregistry list",
-    "bootstrapAssets": "node cli.js landregistry bootstrap",
     "startHLF": "scripts/start-hyperledger.sh",
     "stopHLF": "scripts/stop-hyperledger.sh",
     "teardownHLF": "scripts/teardown.sh",
-    "deployNetwork": "composer archive create --sourceName digitalproperty-network --sourceType module --archiveFile digitalPropertyNetwork.bna && composer network deploy --archiveFile digitalPropertyNetwork.bna  -p hlfv1 -i admin -s adminpw && composer network list -n digitalproperty-network -p hlfv1 -i admin -s adminpw",
+    "deployNetwork": "composer network deploy --archiveFile digitalLandTitle.bna  -p hlfv1 -i admin -s adminpw && composer network list -n digitalproperty-network -p hlfv1 -i admin -s adminpw",
     "postinstall": "scripts/download-hyperledger.sh && scripts/createProfile.sh && npm run startHLF && npm run deployNetwork"
   },
   "repository": {

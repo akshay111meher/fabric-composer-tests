@@ -9,9 +9,8 @@ function onRegisterPropertyForSale(propertyForSale) {
     console.log('### onRegisterPropertyForSale ' + propertyForSale.toString());
     propertyForSale.title.forSale = true;
 
-    returAssetRegistry('net.biz.digitalPropertyNetwork.LandTitle').then(function(result) {
+    returnAssetRegistry('net.biz.digitalPropertyNetwork.LandTitle').then(function(result) {
             return result.update(propertyForSale.title);
         }
     );
 }
-
