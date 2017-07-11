@@ -1,0 +1,8 @@
+{
+  "gettingstarted": {
+       "participantId" : "admin",
+       "participantPwd" :"adminpw",
+       "businessNetworkIdentifier" : "digitalemployee-network",
+       "connectionProfile" :"hlfv1"
+    }
+}

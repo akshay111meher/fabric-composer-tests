@@ -1,0 +1,33 @@
+{
+  "name": "employee-network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "composer --version || { echo 'Please first run npm install -g composer-cli' ; exit 1;} ",
+    "startHLF": "scripts/start-hyperledger.sh",
+    "stopHLF": "scripts/stop-hyperledger.sh",
+    "teardownHLF": "scripts/teardown.sh",
+    "deployNetwork": "composer archive create --sourceName pn --sourceType dir --archiveFile digitalLandTitle.bna && composer network deploy --archiveFile digitalLandTitle.bna  -p hlfv1 -i admin -s adminpw && composer network list -n digitalproperty-network -p hlfv1 -i admin -s adminpw",
+    "postinstall": "scripts/download-hyperledger.sh && scripts/createProfile.sh && npm run startHLF && npm run deployNetwork"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "cli-table": "^0.3.1",
+    "composer-admin": "^0.7.5",
+    "composer-client": "^0.7.5",
+    "config": "^1.24.0",
+    "digitalproperty-network": "latest",
+    "fabric-ca-client": "^1.0.0-alpha2",
+    "fabric-client": "^1.0.0-alpha2",
+    "hapi": "^16.1.1",
+    "jsonfile": "^2.4.0",
+    "lodash": "^4.17.4",
+    "sprintf-js": "^1.0.3",
+    "unirest": "^0.5.1",
+    "winston": "^2.3.0",
+    "yargs": "^6.5.0"
+  }
+}

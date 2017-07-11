@@ -8,7 +8,7 @@
     "startHLF": "scripts/start-hyperledger.sh",
     "stopHLF": "scripts/stop-hyperledger.sh",
     "teardownHLF": "scripts/teardown.sh",
-    "deployNetwork": "composer network deploy --archiveFile digitalLandTitle.bna  -p hlfv1 -i admin -s adminpw && composer network list -n digitalproperty-network -p hlfv1 -i admin -s adminpw",
+    "deployNetwork": "composer network deploy --archiveFile invoiceSample.bna -p hlfv1 -i admin -s adminpw",
     "postinstall": "scripts/download-hyperledger.sh && scripts/createProfile.sh && npm run startHLF && npm run deployNetwork"
   },
   "repository": {
@@ -29,7 +29,7 @@
     "composer-admin": "^0.7.0",
     "composer-client": "^0.7.0",
     "config": "^1.24.0",
-    "digitalproperty-network": "latest",
+    "digitalproperty-network":"latest",
     "jsonfile": "^2.4.0",
     "lodash": "^4.17.4",
     "sprintf-js": "^1.0.3",

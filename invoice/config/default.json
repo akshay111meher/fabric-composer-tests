@@ -1,0 +1,8 @@
+{
+  "gettingstarted": {
+       "participantId" : "admin",
+       "participantPwd" :"adminpw",
+       "businessNetworkIdentifier" : "invoice-sample",
+       "connectionProfile" :"hlfv1"
+    }
+}

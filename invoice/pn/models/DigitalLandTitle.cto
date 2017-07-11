@@ -1,0 +1,44 @@
+/**  A 'Getting Started Tutorial' to work with Hyperledger Composer
+*/
+
+namespace net.biz.invoice
+
+participant Employee identified by employeeId {
+  o String employeeId
+  o String name
+  o String location
+  o String designation
+}
+
+asset Project identified by projectId {
+  o String projectId
+  o String name
+  o String maxBilling
+  o String location
+  o String costPerHour
+  o String[] employees
+}
+
+asset Day identified by date {
+  o String date
+  o String[] projects
+}
+
+asset Efforts identified by effortId {
+ o String effortId
+ o String expectedEffort
+ o String[] actualEffort
+ --> Employee owner
+}
+
+transaction SubmitEfforts identified by transactionId {
+  o String transactionId
+  o String effortsValue
+  --> Employee from
+  --> Efforts effort
+}
+
+event EffortEvent identified by eventId {
+  o String eventId
+  o String data
+}

@@ -1,0 +1,98 @@
+/**  A 'Getting Started Tutorial' to work with Hyperledger Composer
+*/
+
+namespace net.biz.invoice
+
+participant Employee identified by employeeId {
+  o String employeeId
+  o String name
+  o String location
+  o String designation
+}
+
+asset EffortToken identified by tokenId {
+  o String tokenId
+  o Boolean depricated
+  o String from
+  o String to
+  o String project
+}
+
+asset EffortData identified by dataId {
+  o String dataId
+  o String date
+  o String employeeId
+  o EffortToken[] effortToken
+  --> Employee owner
+}
+
+asset Project identified by projectId {
+  o String projectId
+  o String previous
+  o String name
+  o String startDate
+  o String endDate
+  o String location
+  o String maxBilling
+  o String onshore
+  o String offshore
+  --> EffortData[] effortData
+}
+
+asset Day identified by date {
+  o String date
+  o Project[] projects
+}
+
+transaction AddProject identified by transactionId {
+  o String transactionId
+  o String projectId
+  o String date
+  o String previous
+  o String name
+  o String startDate
+  o String endDate
+  o String location
+  o String onshore
+  o String offshore
+  --> Day day
+}
+
+transaction AddEffortData identified by transactionId{
+  o String transactionId
+  o String date
+  o String projectId
+  o String employeeId
+  --> Day day
+  --> Employee owner
+}
+
+transaction AddEffortToken identified by transactionId {
+  o String transactionId
+  o String projectId
+  o String employeeId
+  o String from
+  o String to
+  o String date
+  --> Day day
+  --> EffortData effortData
+}
+
+transaction AddDay identified by transactionId {
+  o String transactionId
+  o String date
+}
+
+transaction LinkEmployee identified by transactionId {
+  o String transactionId
+  o String projectId
+  o String date
+  o String employeeId
+  --> EffortData effortData
+  --> Day day
+
+}
+event GeneralEvent identified by eventId {
+  o String eventId
+  o String data
+}

@@ -1,0 +1,35 @@
+/**  A 'Getting Started Tutorial' to work with Hyperledger Composer
+*/
+
+namespace net.biz.digitalEmployeeNetwork
+
+asset Employee identified by employeeId {
+  o String   employeeId
+  --> Location   current
+  o String   information
+  o Boolean  forTransfer   optional
+}
+
+asset transferAgreement identified by transferId {
+  o String    transferId
+  --> Location    to
+  --> Location    from
+  --> Employee employee
+}
+
+participant Location identified by locationId {
+  o String locationId
+  o String city
+  o String state
+}
+
+transaction RegisterEmployeeForTransfer identified by transactionId{
+  o String transactionId
+  --> Location from
+  --> Employee employee
+}
+
+event EmployeeEvent identified by eventId {
+  o String eventId
+  o String data
+}

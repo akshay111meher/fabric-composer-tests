@@ -1,0 +1,16 @@
+rule R1 {
+    description: "Employee can edit his efforts"
+    participant(emp): "net.biz.invoice.Employee"
+    operation: UPDATE
+    resource(eff): "net.biz.invoice.Efforts"
+    condition: (emp == eff.owner)
+    action: ALLOW
+}
+
+rule R2 {
+    description: "Allow all participants access to all resources"
+    participant: "ANY"
+    operation: READ
+    resource: "net.biz.invoice"
+    action: ALLOW
+}

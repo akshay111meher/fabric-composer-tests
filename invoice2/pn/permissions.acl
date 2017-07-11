@@ -1,0 +1,24 @@
+rule R1 {
+    description: "Allow all participants access to all resources"
+    participant(employee): "net.biz.invoice.Employee"
+    operation: UPDATE
+    resource(effortData): "net.biz.invoice.EffortData"
+    condition: (effortData.owner == employee)
+    action: ALLOW
+}
+
+rule R2 {
+    description: "Allow all participants access to all resources"
+    participant: "ANY"
+    operation: ALL
+    resource: "net.biz.invoice"
+    action: ALLOW
+}
+
+rule R3 {
+    description: "Employee can edit his efforts"
+    participant: "net.biz.invoice.Employee"
+    operation: ALL
+    resource: "net.biz.invoice.AddEffortToken"
+    action: ALLOW
+}
